@@ -1,5 +1,5 @@
-body {
-    background-color: white;
+body{
+    background-color: #444444 !important;
 }
 
 .container {
@@ -25,4 +25,34 @@ body {
 
 .product-img {
     width: 70%;
+}
+table {
+    width: 250px;
+    border-collapse: collapse;
+    border: 2px solid black;
+    background-color: lightblue;
+}
+td {
+    border: 1px solid black;
+    width: 100px;
+}
+iframe {
+
+}
+h2 {
+    margin-top: 50px;
+}
+.container-cards{
+    display: flex;
+    gap: 15px;
+
+}
+#Banner-One{
+    color: lightblue;
+}
+#Product-card-text{
+    color: white;
+}
+.nav-link:hover{
+    color: lightblue !important;
 }

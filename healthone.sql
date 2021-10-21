@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 20 okt 2021 om 13:38
+-- Gegenereerd op: 18 okt 2021 om 19:35
 -- Serverversie: 10.4.21-MariaDB
--- PHP-versie: 8.0.11
+-- PHP-versie: 8.0.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -87,12 +87,32 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `name`, `picture`, `description`, `category_id`) VALUES
-(1, 'Crosstrainer 1', 'categories/crosstrainer/cr1.jpg', 'Geen training is hetzelfde met deze crosstrainer want je traint heel je lichaam en met maar liefst 24 programma\'s, 16 weerstandsniveaus  voldoet deze crosstrainer aan de wensen van vrijwel iedere thuissporter.', 1),
-(2, 'Crosstrainer 2', 'categories/crosstrainer/cr2.jpg', 'Geen training is hetzelfde met deze crosstrainer want je traint heel je lichaam en met maar liefst 24 programma\'s, 16 weerstandsniveaus  voldoet deze crosstrainer aan de wensen van vrijwel iedere thuissporter.', 1),
-(3, 'Crosstrainer 3', 'categories/crosstrainer/cr3.jpg', 'Geen training is hetzelfde met deze crosstrainer want je traint heel je lichaam en met maar liefst 24 programma\'s, 16 weerstandsniveaus  voldoet deze crosstrainer aan de wensen van vrijwel iedere thuissporter.', 1),
-(4, 'Crosstrainer 4', 'categories/crosstrainer/cr4.jpg', 'Geen training is hetzelfde met deze crosstrainer want je traint heel je lichaam en met maar liefst 24 programma\'s, 16 weerstandsniveaus  voldoet deze crosstrainer aan de wensen van vrijwel iedere thuissporter.', 1),
-(5, 'Crosstrainer 5', 'categories/crosstrainer/cr5.jpg', 'Geen training is hetzelfde met deze crosstrainer want je traint heel je lichaam en met maar liefst 24 programma\'s, 16 weerstandsniveaus  voldoet deze crosstrainer aan de wensen van vrijwel iedere thuissporter.', 1),
-(6, 'Crosstrainer 6', 'categories/crosstrainer/cr6.jpg', 'Geen training is hetzelfde met deze crosstrainer want je traint heel je lichaam en met maar liefst 24 programma\'s, 16 weerstandsniveaus  voldoet deze crosstrainer aan de wensen van vrijwel iedere thuissporter.', 1);
+(1, 'Crosstrainer 1', 'categories/crosstrainer/cr1.jpg', 'Train op een van de meest effectieve manieren met deze crosstrainer. Met deze crosstrainer train je je gehele lichaam, van je benen en armen tot je core. En dat op een fijne en soepele manier. Met 32 weerstandsniveaus en 18 verschillende trainingsprogramma\'s zet je iedere keer net dat stapje extra.', 1),
+(2, 'Crosstrainer 2', 'categories/crosstrainer/cr2.jpg', 'Train op een van de meest effectieve manieren met deze crosstrainer. Met deze crosstrainer train je je gehele lichaam, van je benen en armen tot je core. En dat op een fijne en soepele manier. Met 32 weerstandsniveaus en 18 verschillende trainingsprogramma\'s zet je iedere keer net dat stapje extra.', 1),
+(3, 'Crosstrainer 3', 'categories/crosstrainer/cr3.jpg', 'Train op een van de meest effectieve manieren met deze crosstrainer. Met deze crosstrainer train je je gehele lichaam, van je benen en armen tot je core. En dat op een fijne en soepele manier. Met 32 weerstandsniveaus en 18 verschillende trainingsprogramma\'s zet je iedere keer net dat stapje extra.', 1),
+(4, 'Crosstrainer 4', 'categories/crosstrainer/cr4.jpg', 'Train op een van de meest effectieve manieren met deze crosstrainer. Met deze crosstrainer train je je gehele lichaam, van je benen en armen tot je core. En dat op een fijne en soepele manier. Met 32 weerstandsniveaus en 18 verschillende trainingsprogramma\'s zet je iedere keer net dat stapje extra.', 1),
+(5, 'Crosstrainer 5', 'categories/crosstrainer/cr5.jpg', 'Train op een van de meest effectieve manieren met deze crosstrainer. Met deze crosstrainer train je je gehele lichaam, van je benen en armen tot je core. En dat op een fijne en soepele manier. Met 32 weerstandsniveaus en 18 verschillende trainingsprogramma\'s zet je iedere keer net dat stapje extra.', 1),
+(6, 'Crosstrainer 6', 'categories/crosstrainer/cr6.jpg', 'Train op een van de meest effectieve manieren met deze crosstrainer. Met deze crosstrainer train je je gehele lichaam, van je benen en armen tot je core. En dat op een fijne en soepele manier. Met 32 weerstandsniveaus en 18 verschillende trainingsprogramma\'s zet je iedere keer net dat stapje extra.', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `user`
+--
+
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `user`
+--
+
+INSERT INTO `user` (`id`, `name`, `email`, `password`) VALUES
+(1, NULL, NULL, NULL);
 
 --
 -- Indexen voor geëxporteerde tabellen
@@ -120,6 +140,12 @@ ALTER TABLE `product`
   ADD KEY `category_id` (`category_id`);
 
 --
+-- Indexen voor tabel `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT voor geëxporteerde tabellen
 --
 
@@ -140,6 +166,12 @@ ALTER TABLE `opening_hours`
 --
 ALTER TABLE `product`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT voor een tabel `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

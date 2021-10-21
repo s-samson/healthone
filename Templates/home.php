@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-    <html>
+<html>
 
     <?php
     include_once('defaults/head.php');

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <?php
 include_once('defaults/head.php');
 ?>
@@ -28,14 +29,15 @@ include_once('defaults/head.php');
 <div class="row">
     <div class="col-md-12">
         <div class="card-body text-center">
-            <h5 class="card-title"><?= $product->name ?></h5>
+            <h5 id="Product-card-text" class="card-title"><?= $product->name ?></h5>
             <img class="img-fluid center-block" width="300px" src='/img/<?= $product->picture ?>'/>
             <div class="card-body">
-                <h5 class="card-text"><?= $product->description ?></h5>
+                <h5 id="Product-card-text" class="card-text"><?= $product->description ?></h5>
             </div>
         </div>
     </div>
 </div>
+
 
 
 <hr>
