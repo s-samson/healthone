@@ -19,7 +19,7 @@ include_once('defaults/head.php');
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/home">Sportcenter</a></li>
             <li class="breadcrumb-item"><a href="/categories">Categories</a></li>
-            <li class="breadcrumb-item"><a href="/product">Products</a></li>
+            <li class="breadcrumb-item"><a href="/products">Products</a></li>
             <li class="breadcrumb-item"><a href="/product">Product</a></li>
         </ol>
     </nav>
@@ -33,6 +33,7 @@ include_once('defaults/head.php');
             <img class="img-fluid center-block" width="300px" src='/img/<?= $product->picture ?>'/>
             <div class="card-body">
                 <h5 id="Product-card-text" class="card-text"><?= $product->description ?></h5>
+                <a type="button" href="/review/<?=$product->id?>" role="button" class="btn btn-secondary">Add Review</a>
             </div>
         </div>
     </div>

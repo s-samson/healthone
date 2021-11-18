@@ -18,7 +18,7 @@ include_once('defaults/head.php');
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/home">Sportcenter</a></li>
             <li class="breadcrumb-item"><a href="/categories">Categories</a></li>
-            <li class="breadcrumb-item"><a href="/product">Products</a></li>
+            <li class="breadcrumb-item"><a href="/products">Products</a></li>
         </ol>
     </nav>
 
@@ -30,7 +30,7 @@ include_once('defaults/head.php');
         <div class="col-sm-6 col-md-2">
             <div class="card">
                 <div class="card-body text-center">
-                    <a href="/categories/<?= $product->category_id ?>/product/<?= $product->id ?>">
+                    <a href="/product/<?= $product->id ?>">
                         <img class="product-img img-responsive center-block" src='/img/<?= $product->picture ?>'/>
                     </a>
                     <div class="card-title mb-3"><?= $product->name ?>
