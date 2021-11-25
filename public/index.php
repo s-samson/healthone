@@ -22,6 +22,34 @@ switch ($params[1]) {
             $products = getProducts($categoryId);
             $name = getCategoryName($categoryId);
             include_once "../Templates/products.php";
+<<<<<<< HEAD
+=======
+        }
+        break;
+    case 'product':
+            if (isset($_GET['id'])) {
+                $productId = $_GET['id'];
+                $product = getProduct($productId);
+                $titleSuffix = ' | ' . $product->name;
+                include_once "../Templates/product.php";
+            }
+            break;
+
+    case 'review':
+        if(isset($_GET['id']))
+        {
+            $product=getProduct($_GET['id']);
+            if(isset($_POST['verzenden'])) {
+               // saveB;
+                //ga naar producten
+            } else {
+                include_once "../Templates/review.php";
+            }
+        }
+        else {
+            $titleSuffix = ' | Home';
+            include_once "../Templates/home.php";
+>>>>>>> 597c3bccbaefdee2ec828665cf59de943077ff49
         }
         break;
     case 'product':
