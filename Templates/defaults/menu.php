@@ -25,7 +25,7 @@
             </ul>
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><b>Inloggen</b></a>
+                    <a class="nav-link" href="/login"><b>Inloggen</b></a>
                 </li>
             </ul>
         </div>

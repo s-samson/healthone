@@ -50,9 +50,10 @@ h2 {
 #Banner-One{
     color: lightblue;
 }
-#Product-card-text{
-    color: white;
-}
+
 .nav-link:hover{
     color: lightblue !important;
+}
+.p{
+    color: black;
 }
