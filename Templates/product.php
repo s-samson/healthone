@@ -55,7 +55,11 @@ try {
     die("Error!: " . $e->getMessage());
 }
 ?>
+<<<<<<< HEAD
 </div>
+=======
+
+>>>>>>> 46f8e6ce64d50b724af07c56f93e77abc68affe9
 <hr>
 <?php
 include_once('defaults/footer.php');

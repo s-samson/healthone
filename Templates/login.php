@@ -31,7 +31,10 @@
 
 </div>
 
+<<<<<<< HEAD
 <div class = container>
+=======
+>>>>>>> 46f8e6ce64d50b724af07c56f93e77abc68affe9
 <form method="post">
     <div class="mb-3">
         <label for="example1" class="form-label">Email address</label>
@@ -40,12 +43,19 @@
     <div class="mb-3">
         <label for="example2" class="form-label">Password</label>
         <input type="password" class="form-control" name="password" id="example2">
+<<<<<<< HEAD
         <button type="submit" name="login" class="btn btn-primary">Submit</button>
     </div>
 
 
 </form>
 </div>
+=======
+    </div>
+    <button type="submit" name="login" class="btn btn-primary">Submit</button>
+
+</form>
+>>>>>>> 46f8e6ce64d50b724af07c56f93e77abc68affe9
 
 
 </body>
