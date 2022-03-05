@@ -9,7 +9,6 @@ require '../Modules/Member.php';
 require '../Modules/Register.php';
 
 session_start();
-var_dump($_SESSION);
 $request = $_SERVER['REQUEST_URI'];
 $params = explode("/", $request);
 $title = "HealthOne";
@@ -48,7 +47,6 @@ switch ($params[1]) {
             $productId = $_GET['id'];
             $product = getProduct($productId);
             if (isset($_POST['verzenden'])) {
-                //var_dump($_POST);
                 $name = $_POST['name'];
                 $description = $_POST['description'];
                 $stars = $_POST['stars'];

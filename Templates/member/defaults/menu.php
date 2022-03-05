@@ -14,6 +14,9 @@
                     <a class="nav-link active" href="/member/home">Home</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link active" href="/categories">Sportapparaat</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="/member/profile">Profile</a>
             </ul>
             <ul class="navbar-nav ms-auto">

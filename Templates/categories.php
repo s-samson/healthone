@@ -7,9 +7,16 @@ include_once('defaults/head.php');
 <body>
 
 <div class="container">
-    <?php
+ <?php
     include_once('defaults/header.php');
-    include_once('defaults/menu.php');
+
+
+    if (isMember()){
+        include_once ('member/defaults/menu.php');
+    }
+    else{
+        include_once('defaults/menu.php');
+    }
     include_once('defaults/pictures.php');
     ?>
 

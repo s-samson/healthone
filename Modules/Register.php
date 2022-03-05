@@ -6,6 +6,7 @@ function makeRegistration():string
     $password = filter_input(INPUT_POST, 'password');
     $firstName = filter_input(INPUT_POST, "firstName");
     $lastName = filter_input(INPUT_POST, "lastName");
+
     if ($email !== false && !empty($password) && !empty($firstName) && !empty($lastName)) {
         $sth = $pdo->prepare('INSERT INTO user(email,password,first_name,last_name,role) VALUES (?,?,?,?,"member")');
         $sth->bindParam(1, $email);

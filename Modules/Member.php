@@ -23,6 +23,27 @@ function changeProfile():bool
         return false;
     }
 }
+function changePassword():bool
+{
+    global $pdo;
+
+    $email=$_SESSION['user']->email;
+    $password=filter_input(INPUT_POST, "password", FILTER_SANITIZE_STRING);
+
+    if (!empty($password)) {
+
+        $sth = $pdo->prepare('UPDATE user SET password=:p WHERE email=:e');
+
+        $sth->bindValue(":p", $password);
+        $sth->bindValue(":e", $email);
+        $sth->execute();
+
+        $_SESSION['user']->password=$password;
+        return true;
+    } else {
+        return false;
+    }
+}
 
 function isMember():bool
 {

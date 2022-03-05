@@ -14,10 +14,16 @@
 <body>
 <div class="container">
     <?php
+    include_once ('defaults/head.php');
     include_once('defaults/header.php');
-    include_once('defaults/menu.php');
+
+    if (isMember()) {
+        include_once('member/defaults/menu.php');
+    } else {
+        include_once('defaults/menu.php');
+    }
     include_once('defaults/pictures.php');
-    include_once('defaults/head.php');
+
     global $product;
     ?>
 

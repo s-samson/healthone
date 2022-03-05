@@ -10,7 +10,13 @@ include_once('defaults/head.php');
 <div class="container">
     <?php
     include_once('defaults/header.php');
-    include_once('defaults/menu.php');
+
+
+    if (isMember()) {
+        include_once('member/defaults/menu.php');
+    } else {
+        include_once('defaults/menu.php');
+    }
     include_once('defaults/pictures.php');
     global $product;
     ?>
@@ -32,7 +38,10 @@ include_once('defaults/head.php');
             <img class="img-fluid center-block" width="300px" src='/img/<?= $product->picture ?>'/>
             <div class="card-body">
                 <h5 id="Product-card-text" class="card-text"><?= $product->description ?></h5>
-                <a type="button" href="/review/<?=$product->id?>" role="button" class="btn btn-secondary">Add Review</a>
+                <?php
+                if (isMember()) {
+                    ?> <a type="button" href="/review/<?=$product->id?>" role="button" class="btn btn-secondary">Add Review</a><?php
+                }?>
             </div>
         </div>
     </div>
@@ -48,6 +57,7 @@ try {
     foreach ($result as &$data) {
         echo $data ["name"] . " <br>  ";
         echo $data ["description"] . " <br> ";
+        echo $data ["stars"] . "  <br> ";
         echo $data ["date"] . " <br> <br> ";
     }
     echo "</table>";
