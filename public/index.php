@@ -3,16 +3,18 @@ require '../Modules/Categories.php';
 require '../Modules/Products.php';
 require '../Modules/Database.php';
 require '../Modules/Review.php';
-<<<<<<< HEAD
 require '../Modules/login.php';
+require '../Modules/logout.php';
+require '../Modules/Member.php';
+require '../Modules/Register.php';
 
-=======
->>>>>>> 46f8e6ce64d50b724af07c56f93e77abc68affe9
-
+session_start();
+var_dump($_SESSION);
 $request = $_SERVER['REQUEST_URI'];
 $params = explode("/", $request);
 $title = "HealthOne";
 $titleSuffix = "";
+
 
 switch ($params[1]) {
     case 'categories':
@@ -27,7 +29,6 @@ switch ($params[1]) {
             $products = getProducts($categoryId);
             $name = getCategoryName($categoryId);
             include_once "../Templates/products.php";
-<<<<<<< HEAD
         }
         break;
     case 'product':
@@ -36,101 +37,10 @@ switch ($params[1]) {
             $product = getProduct($productId);
             $titleSuffix = ' | ' . $product->name;
             include_once "../Templates/product.php";
-=======
-<<<<<<< HEAD
->>>>>>> 46f8e6ce64d50b724af07c56f93e77abc68affe9
         }
         break;
-    case 'product':
-=======
-<<<<<<< HEAD
-=======
-        }
-        break;
-    case 'product':
-            if (isset($_GET['id'])) {
-                $productId = $_GET['id'];
-                $product = getProduct($productId);
-                $titleSuffix = ' | ' . $product->name;
-                include_once "../Templates/product.php";
-            }
-            break;
-
-    case 'review':
-        if(isset($_GET['id']))
-        {
-            $product=getProduct($_GET['id']);
-            if(isset($_POST['verzenden'])) {
-               // saveB;
-                //ga naar producten
-            } else {
-                include_once "../Templates/review.php";
-            }
-        }
-        else {
-            $titleSuffix = ' | Home';
-            include_once "../Templates/home.php";
->>>>>>> 597c3bccbaefdee2ec828665cf59de943077ff49
-        }
-        break;
-    case 'product':
->>>>>>> 03a3cb30438bb15e0cfd1ff42cb8b1b78b055898
-        if (isset($_GET['id'])) {
-            $productId = $_GET['id'];
-            $product = getProduct($productId);
-            $titleSuffix = ' | ' . $product->name;
-            include_once "../Templates/product.php";
-        }
-        break;
-
-    case 'review':
-        if (isset($_GET['id'])) {
-            $productId = $_GET['id'];
-            $product = getProduct($productId);
-            if (isset($_POST['verzenden'])) {
-                //var_dump($_POST);
-                $name = $_POST['name'];
-                $description = $_POST['description'];
-                saveReview($name, $description, $productId);
-                $reviews = getReview();
-                include_once "../Templates/product.php";
-            } else {
-                include_once "../Templates/review.php";
-            }
-        } else {
-            include_once "../Templates/home.php";
-        }
-<<<<<<< HEAD
-        break;
-    case 'login':
-        $titleSuffix =' | login ';
-        if(isset($_POST['login'])){
-            $result = checkLogin();
-
-            switch ($result){
-                case 'ADMIN':
-                    header ("location : /admin/home");
-                    break;
-                case 'MEMBER':
-                case 'FAILURE':
-                    $message = "Email of Password is niet correct ingevuld!";
-                    include_once "../Templates/login.php";
-                    break;
-                case 'INCOMPLETE';
-                $message = "Formulier is niet volledig ingevuld!";
-                include_once "../Templates/login.php";
-                break;
-
-            }
-        }
-        else{
-            include_once "../Templates/login.php";
-        }
-        break;
-    case 'admin':
-        include_once ('admin.php');
-=======
->>>>>>> 03a3cb30438bb15e0cfd1ff42cb8b1b78b055898
+    case 'contact':
+        include_once "../Templates/contact.php";
         break;
 
     case 'review':
@@ -160,9 +70,11 @@ switch ($params[1]) {
 
             switch ($result){
                 case 'ADMIN':
-                    header ("location : /admin/home");
+                    header ("Location: /admin/home");
                     break;
                 case 'MEMBER':
+                    header("location: /member/home");
+                    break;
                 case 'FAILURE':
                     $message = "Email of Password is niet correct ingevuld!";
                     include_once "../Templates/login.php";
@@ -178,8 +90,39 @@ switch ($params[1]) {
             include_once "../Templates/login.php";
         }
         break;
+    case 'logout':
+        $_SESSION=[];
+        include_once ('../Templates/home.php');
+        break;
     case 'admin':
         include_once ('admin.php');
+        break;
+    case 'member':
+        include_once ('member.php');
+        break;
+
+    case 'register':
+        $titleSuffix = ' | Register';
+
+        if(isset($_POST['submit'])){
+            $result = makeRegistration();
+            switch ($result) {
+                case 'SUCCESS':
+                    header("Location: /home");
+                    break;
+
+                case 'INCOMPLETE':
+                    $message="Niet alle velden zijn correct ingevuld";
+                    include_once "../Templates/register.php";
+                    break;
+
+                case 'EXIST':
+                    $message = "Gebruiker bestaat al";
+                    include_once "../Templates/register.php";
+            }
+        } else {
+            include_once "../Templates/register.php";
+        }
         break;
     default:
         $titleSuffix = ' | Home';

@@ -12,14 +12,18 @@ if(!isAdmin()){
             include_once "../Templates/admin/home.php";
             break;
         case 'products':
+            $products = getAllProducts();
+            include_once "../Templates/admin/products.php";
             break;
         case 'addProducts':
+            include_once "../Templates/admin/addProducts.php";
             break;
-        case 'deleteProducts':
+        case 'deleteProduct':
+            deleteProduct($_GET['id']);
+            header("location:/admin/products");
             break;
-        default:
+            default:
         include_once "../Templates/admin/home.php";
         break;
-
     }
 }

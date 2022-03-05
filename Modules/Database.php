@@ -17,10 +17,7 @@ try {
     include_once ('../Classes/Category.php');
     include_once ('../Classes/Product.php');
     include_once ('../Classes/Review.php');
-<<<<<<< HEAD
     include_once ('../Classes/User.php');
-=======
->>>>>>> 46f8e6ce64d50b724af07c56f93e77abc68affe9
 } catch (\PDOException $e) {
     throw new \PDOException($e->getMessage(), (int)$e->getCode());
 }

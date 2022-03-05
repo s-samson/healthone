@@ -32,7 +32,7 @@ include_once('defaults/head.php');
                     $query = $db->prepare ("SELECT * FROM opening_hours");
                     $query->execute();
                     $result = $query->fetchAll(PDO::FETCH_ASSOC);
-                    echo "<table class='timetable'>";
+                    echo "<table>";
                     foreach ($result as &$data) {
                         echo "<td class='tdt'>" . $data ["day"] . " ";
                         echo "<td class='tdt'>" . $data ["time"] . "<br>";

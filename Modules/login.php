@@ -15,10 +15,7 @@ function checkLogin():string
         $sth->setFetchMode(PDO::FETCH_CLASS,'User');
         $sth->execute();
         $user = $sth->fetch();
-<<<<<<< HEAD
         var_dump($user);
-=======
->>>>>>> 46f8e6ce64d50b724af07c56f93e77abc68affe9
 
         if ($user!==false){
             $_SESSION['user']=$user;
@@ -33,7 +30,6 @@ function checkLogin():string
 
     }
     return 'INCOMPLETE';
-<<<<<<< HEAD
 }
 
 function isAdmin():bool
@@ -52,6 +48,3 @@ function isAdmin():bool
     }
     return false;
 }
-=======
-}
->>>>>>> 46f8e6ce64d50b724af07c56f93e77abc68affe9
